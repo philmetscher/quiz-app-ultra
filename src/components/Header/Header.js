@@ -1,10 +1,10 @@
-//import logo from "./../../assets/images/Quizzle.svg";
+import logo from "../../assets/image/QuizzleUltra.svg";
 import "./Header.css";
 
 function Header() {
   return (
     <header className="header-main">
-      <h1>Quiz App Ultra</h1>
+      <img src={logo} alt="Quizzle" />
     </header>
   );
 }

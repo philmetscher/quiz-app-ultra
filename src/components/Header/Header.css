@@ -7,3 +7,7 @@ header {
   box-shadow: 0 4px 4px var(--secondary025);
   color: #fff;
 }
+
+header img {
+  height: 43px;
+}
