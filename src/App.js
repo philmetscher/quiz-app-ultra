@@ -1,8 +1,8 @@
 import "./App.css";
 
-import Header from "./components/Header/Header";
-import Card from "./components/Card/Card";
-import Navigation from "./components/Navigation/Navigation";
+import Header from "./components/header/Header";
+import Card from "./components/card/Card";
+import Navigation from "./components/navigation/Navigation";
 
 function App() {
   return (
