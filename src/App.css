@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+@import "/src/font.css";
+
+:root {
+  /* colors */
+  --primary: #6996db;
+  --secondary: #333;
+  --secondary025: rgba(51, 51, 51, 0.25);
+
+  /* card */
+  --card-bg: #dddbdb;
+  --card-btn-hide-answer-color: #ffffff;
+  --card-answer-color: #ffffff;
+
+  /* form */
+  --input-bg: var(--card-bg);
+
+  /* profile */
+  --profile-questions-bookmark-bg: #f2f2f2;
+  --profile-questions-bookmark-btn-color: #ffffff;
+
+  --profile-setting-switch-bg: #f2f2f2;
+  --profile-setting-switch-color: var(--secondary);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: "Open Sans", sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  min-width: 320px;
+  color: var(--secondary);
+  font-size: 16px;
+  padding-bottom: 91px;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  padding: 0 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  border: none;
+  background: var(--primary);
+  box-shadow: 0 0 4px var(--secondary025);
+  font-size: 18px;
+  padding: 10px 25px;
+  cursor: pointer;
 }
