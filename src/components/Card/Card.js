@@ -1,23 +1,21 @@
 import "./Card.css";
 
-function Card() {
+function Card({ question, answer, tag }) {
   return (
     <section className="card" data-js="card">
       <div className="card__question-wrapper">
         <p className="card__question" data-js="question">
-          What property flips the axes in flexbox?
+          {question}
         </p>
         <button className="card__btn" data-js="toggleAnswer">
           Show Answer
         </button>
         <ul className="card__tags">
-          <li className="card__tag">#html</li>
-          <li className="card__tag">#css</li>
-          <li className="card__tag">#flexbox</li>
+          <li className="card__tag">#{tag}</li>
         </ul>
       </div>
       <div className="card__answer-wrapper" data-js="answer">
-        <p>flex-direction</p>
+        <p>{answer}</p>
       </div>
       <button
         className="card__bookmark"
