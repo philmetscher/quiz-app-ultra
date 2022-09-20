@@ -1,6 +1,6 @@
 import "./Card.css";
 
-function Card({ question, answer, tag }) {
+function Card({ question, answer, tags }) {
   return (
     <section className="card" data-js="card">
       <div className="card__question-wrapper">
@@ -11,7 +11,11 @@ function Card({ question, answer, tag }) {
           Show Answer
         </button>
         <ul className="card__tags">
-          <li className="card__tag">#{tag}</li>
+          {tags.map((tag) => (
+            <li className="card__tag" key={tag}>
+              #{tag}
+            </li>
+          ))}
         </ul>
       </div>
       <div className="card__answer-wrapper" data-js="answer">
