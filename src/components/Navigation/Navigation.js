@@ -1,8 +1,6 @@
-import { useState } from "react";
 import "./Navigation.css";
 
-function Navigation() {
-  const [page, setPage] = useState("home");
+function Navigation({ page, setPage }) {
   return (
     <nav className="nav-main">
       <ul className="nav__list">

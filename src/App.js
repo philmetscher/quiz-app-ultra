@@ -1,22 +1,25 @@
+import { useState } from "react";
 import "./App.css";
 
-import Header from "./components/header/Header";
-import Card from "./components/card/Card";
-import Navigation from "./components/navigation/Navigation";
 import { cards } from "./db";
 
+import Header from "./components/header/Header";
+import Navigation from "./components/navigation/Navigation";
+import Cards from "./pages/Cards";
+import Form from "./pages/Form";
+import Profile from "./pages/Profile";
+
 function App() {
+  const [page, setPage] = useState("home");
   return (
     <div className="App">
       <Header />
       <main>
-        <section className="quiz" data-js="card-container">
-          {cards.map(({ id, question, answer, tags }) => (
-            <Card key={id} question={question} answer={answer} tags={tags} />
-          ))}
-        </section>
+        {page === "home" && <Cards cards={cards} />}
+        {page === "form" && <Form />}
+        {page === "profile" && <Profile />}
       </main>
-      <Navigation />
+      <Navigation page={page} setPage={setPage} />
     </div>
   );
 }
