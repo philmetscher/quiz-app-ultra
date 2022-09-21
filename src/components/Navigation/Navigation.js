@@ -2,14 +2,13 @@ import { useState } from "react";
 import "./Navigation.css";
 
 function Navigation() {
-  const [currentActiveNav, setCurrentActiveNav] = useState("home");
+  const [page, setPage] = useState("home");
   return (
     <nav className="nav-main">
       <ul className="nav__list">
         <li
           className={
-            "nav__entry" +
-            (currentActiveNav === "home" ? " nav__entry--active" : "")
+            "nav__entry" + (page === "home" ? " nav__entry--active" : "")
           }
         >
           <a
@@ -17,7 +16,7 @@ function Navigation() {
             className="nav__link"
             onClick={(event) => {
               event.preventDefault();
-              setCurrentActiveNav("home");
+              setPage("home");
             }}
           >
             <i className="fa-solid fa-house"></i>
@@ -26,8 +25,7 @@ function Navigation() {
         </li>
         <li
           className={
-            "nav__entry" +
-            (currentActiveNav === "bookmarks" ? " nav__entry--active" : "")
+            "nav__entry" + (page === "bookmarks" ? " nav__entry--active" : "")
           }
         >
           <a
@@ -35,7 +33,7 @@ function Navigation() {
             className="nav__link"
             onClick={(event) => {
               event.preventDefault();
-              setCurrentActiveNav("bookmarks");
+              setPage("bookmarks");
             }}
           >
             <i className="fa-solid fa-bookmark"></i>
@@ -44,8 +42,7 @@ function Navigation() {
         </li>
         <li
           className={
-            "nav__entry" +
-            (currentActiveNav === "form" ? " nav__entry--active" : "")
+            "nav__entry" + (page === "form" ? " nav__entry--active" : "")
           }
         >
           <a
@@ -53,7 +50,7 @@ function Navigation() {
             className="nav__link"
             onClick={(event) => {
               event.preventDefault();
-              setCurrentActiveNav("form");
+              setPage("form");
             }}
           >
             <i className="fa-solid fa-circle-plus"></i>
@@ -62,8 +59,7 @@ function Navigation() {
         </li>
         <li
           className={
-            "nav__entry" +
-            (currentActiveNav === "profile" ? " nav__entry--active" : "")
+            "nav__entry" + (page === "profile" ? " nav__entry--active" : "")
           }
         >
           <a
@@ -71,7 +67,7 @@ function Navigation() {
             className="nav__link"
             onClick={(event) => {
               event.preventDefault();
-              setCurrentActiveNav("profile");
+              setPage("profile");
             }}
           >
             <i className="fa-solid fa-user"></i>
