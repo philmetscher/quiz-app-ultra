@@ -70,9 +70,6 @@
   transition: all 0.25s ease;
   overflow: hidden;
 }
-.card:not(.answer-shown) .card__answer-wrapper {
-  display: none;
-}
 /* ---------------------- */
 /* ANSWER WRAPPER END     */
 /* ---------------------- */

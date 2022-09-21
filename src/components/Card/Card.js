@@ -5,10 +5,7 @@ function Card({ question, answer, tags }) {
   const [showAnswer, setShowAnswer] = useState(false);
 
   return (
-    <section
-      className={"card" + (showAnswer ? " answer-shown" : "")}
-      data-js="card"
-    >
+    <section className={"card"} data-js="card">
       <div className="card__question-wrapper">
         <p className="card__question" data-js="question">
           {question}
@@ -30,9 +27,11 @@ function Card({ question, answer, tags }) {
           ))}
         </ul>
       </div>
-      <div className="card__answer-wrapper" data-js="answer">
-        <p>{answer}</p>
-      </div>
+      {showAnswer && (
+        <div className="card__answer-wrapper" data-js="answer">
+          <p>{answer}</p>
+        </div>
+      )}
       <button
         className="card__bookmark"
         aria-label="bookmark"
