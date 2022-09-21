@@ -15,7 +15,8 @@ function Navigation() {
           <a
             href="#"
             className="nav__link"
-            onClick={() => {
+            onClick={(event) => {
+              event.preventDefault();
               setCurrentActiveNav("home");
             }}
           >
@@ -32,7 +33,8 @@ function Navigation() {
           <a
             href="./bookmarks.html"
             className="nav__link"
-            onClick={() => {
+            onClick={(event) => {
+              event.preventDefault();
               setCurrentActiveNav("bookmarks");
             }}
           >
@@ -49,7 +51,8 @@ function Navigation() {
           <a
             href="./form.html"
             className="nav__link"
-            onClick={() => {
+            onClick={(event) => {
+              event.preventDefault();
               setCurrentActiveNav("form");
             }}
           >
@@ -66,7 +69,8 @@ function Navigation() {
           <a
             href="./profile.html"
             className="nav__link"
-            onClick={() => {
+            onClick={(event) => {
+              event.preventDefault();
               setCurrentActiveNav("profile");
             }}
           >
