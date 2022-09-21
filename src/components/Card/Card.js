@@ -1,14 +1,26 @@
+import { useState } from "react";
 import "./Card.css";
 
 function Card({ question, answer, tags }) {
+  const [showAnswer, setShowAnswer] = useState(false);
+
   return (
-    <section className="card" data-js="card">
+    <section
+      className={"card" + (showAnswer ? " answer-shown" : "")}
+      data-js="card"
+    >
       <div className="card__question-wrapper">
         <p className="card__question" data-js="question">
           {question}
         </p>
-        <button className="card__btn" data-js="toggleAnswer">
-          Show Answer
+        <button
+          className={"card__btn" + (showAnswer ? " btn--hide-answer" : "")}
+          data-js="toggleAnswer"
+          onClick={() => {
+            setShowAnswer(!showAnswer);
+          }}
+        >
+          {showAnswer ? "Hide Answer" : "Show Answer"}
         </button>
         <ul className="card__tags">
           {tags.map((tag) => (
