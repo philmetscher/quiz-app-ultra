@@ -16,6 +16,9 @@ function App() {
       <Header />
       <main>
         {page === "home" && <Cards cards={cards} />}
+        {page === "bookmarks" && (
+          <Cards cards={cards.filter((card) => card.bookmarked)} />
+        )}
         {page === "form" && <Form />}
         {page === "profile" && <Profile />}
       </main>
