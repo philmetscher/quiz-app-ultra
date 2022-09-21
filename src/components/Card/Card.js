@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Card.css";
 
-function Card({ question, answer, tags }) {
+function Card({ question, answer, tags, bookmarked }) {
   const [showAnswer, setShowAnswer] = useState(false);
 
   return (
@@ -33,7 +33,9 @@ function Card({ question, answer, tags }) {
         </div>
       )}
       <button
-        className="card__bookmark"
+        className={
+          "card__bookmark" + (bookmarked ? " card__bookmark--active" : "")
+        }
         aria-label="bookmark"
         data-js="bookmarkBtn"
       >
