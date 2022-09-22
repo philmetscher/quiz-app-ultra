@@ -17,9 +17,12 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        {page === "home" && <Cards cards={cards} />}
+        {page === "home" && <Cards cards={cards} setCards={setCards} />}
         {page === "bookmarks" && (
-          <Cards cards={cards.filter((card) => card.bookmarked)} />
+          <Cards
+            cards={cards.filter((card) => card.bookmarked)}
+            setCards={setCards}
+          />
         )}
         {page === "form" && (
           <Form cards={cards} setCards={setCards} setPage={setPage} />

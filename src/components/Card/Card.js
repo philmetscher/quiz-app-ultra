@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Card.css";
 
-function Card({ question, answer, tags, bookmarked }) {
+function Card({ question, answer, tags, bookmarked, onDeleteClick }) {
   const [showAnswer, setShowAnswer] = useState(false);
 
   //check for some tags
@@ -46,8 +46,12 @@ function Card({ question, answer, tags, bookmarked }) {
       >
         <i className="fa-solid fa-bookmark"></i>
       </button>
-      <button className="card__delete" aria-label="delete">
-        <i class="fa-solid fa-x"></i>
+      <button
+        className="card__delete"
+        aria-label="delete"
+        onClick={onDeleteClick}
+      >
+        <i className="fa-solid fa-x"></i>
       </button>
     </section>
   );
