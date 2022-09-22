@@ -18,7 +18,7 @@ function Card({ question, answer, tags, bookmarked }) {
       <div className="card__question-wrapper">
         <p className="card__question">{question}</p>
         <button
-          className={"card__btn" + (showAnswer ? " btn--hide-answer" : "")}
+          className={"btn card__btn" + (showAnswer ? " btn--hide-answer" : "")}
           onClick={() => {
             setShowAnswer(!showAnswer);
           }}

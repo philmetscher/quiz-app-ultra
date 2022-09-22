@@ -63,7 +63,7 @@ function Form({ cards, setCards, setPage }) {
           Tags: <small>(seperated with ",")</small>
         </label>
       </div>
-      <button className="new-question__submit" type="submit">
+      <button className="btn new-question__submit" type="submit">
         Submit
       </button>
     </form>

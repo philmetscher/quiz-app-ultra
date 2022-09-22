@@ -53,7 +53,7 @@ main {
   padding: 0 20px;
 }
 
-button {
+.btn {
   border: none;
   background: var(--button-bg);
   color: #fff;
@@ -62,6 +62,6 @@ button {
   padding: 10px 25px;
   cursor: pointer;
 }
-button:hover {
+.btn:hover {
   background: var(--button-bg-hover);
 }
