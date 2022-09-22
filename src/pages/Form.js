@@ -2,8 +2,8 @@ import "./Form.css";
 
 function Form() {
   return (
-    <form class="new-question" data-js="questionForm">
-      <div class="form-group">
+    <form className="new-question" data-js="questionForm">
+      <div className="form-group">
         <textarea
           name="question"
           id="question"
@@ -11,34 +11,34 @@ function Form() {
           rows="4"
           placeholder="Your Question:"
           autoFocus
-          autocomplete="off"
+          autoComplete="off"
         ></textarea>
-        <label for="question">Your Question:</label>
+        <label htmlFor="question">Your Question:</label>
       </div>
-      <div class="form-group">
+      <div className="form-group">
         <textarea
           name="answer"
           id="answer"
           cols="30"
           rows="4"
           placeholder="Your Answer:"
-          autocomplete="off"
+          autoComplete="off"
         ></textarea>
-        <label for="answer">Your Answer:</label>
+        <label htmlFor="answer">Your Answer:</label>
       </div>
-      <div class="form-group">
+      <div className="form-group">
         <input
           type="text"
           name="tags"
           id="tags"
           placeholder="Tags:"
-          autocomplete="off"
+          autoComplete="off"
         />
-        <label for="tags">
+        <label htmlFor="tags">
           Tags: <small>(seperated with ",")</small>
         </label>
       </div>
-      <button class="new-question__submit" type="submit">
+      <button className="new-question__submit" type="submit">
         Submit
       </button>
     </form>
