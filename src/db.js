@@ -1,4 +1,4 @@
-export const cards = [
+const initialCards = [
   {
     id: 0,
     question:
@@ -24,3 +24,5 @@ export const cards = [
     bookmarked: false,
   },
 ];
+
+export { initialCards };

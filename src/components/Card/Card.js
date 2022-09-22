@@ -4,6 +4,15 @@ import "./Card.css";
 function Card({ question, answer, tags, bookmarked }) {
   const [showAnswer, setShowAnswer] = useState(false);
 
+  //check for some tags
+  let tagsArray = tags;
+  if (typeof tags === "string") {
+    if (tags.indexOf(",")) {
+      tagsArray = tags.split(",");
+    } else {
+      tagsArray = [tags];
+    }
+  }
   return (
     <section className={"card"} data-js="card">
       <div className="card__question-wrapper">
@@ -20,7 +29,7 @@ function Card({ question, answer, tags, bookmarked }) {
           {showAnswer ? "Hide Answer" : "Show Answer"}
         </button>
         <ul className="card__tags">
-          {tags.map((tag) => (
+          {tagsArray.map((tag) => (
             <li className="card__tag" key={tag}>
               #{tag}
             </li>

@@ -1,8 +1,36 @@
+import { eventWrapper } from "@testing-library/user-event/dist/utils";
+import Card from "../components/card/Card";
 import "./Form.css";
 
-function Form() {
+function Form({ cards, setCards }) {
+  function appendCard({ question, answer, tags }) {
+    const newCard = {
+      id: Math.random().toFixed(36),
+      question: question,
+      answer: answer,
+      tags: tags,
+      bookmarked: false,
+    };
+
+    return newCard;
+  }
+
+  function submitCardForm(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    const appendingCard = appendCard(data);
+    setCards([...cards, appendingCard]);
+  }
+
   return (
-    <form className="new-question" data-js="questionForm">
+    <form
+      className="new-question"
+      data-js="questionForm"
+      onSubmit={submitCardForm}
+    >
       <div className="form-group">
         <textarea
           name="question"
