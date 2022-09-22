@@ -3,8 +3,13 @@
 :root {
   /* colors */
   --primary: #6996db;
+  --primary-hover: #587eb8;
   --secondary: #333;
   --secondary025: rgba(51, 51, 51, 0.25);
+
+  /* all buttons */
+  --button-bg: var(--primary);
+  --button-bg-hover: var(--primary-hover);
 
   /* card */
   --card-bg: #dddbdb;
@@ -20,9 +25,6 @@
 
   --profile-setting-switch-bg: #f2f2f2;
   --profile-setting-switch-color: var(--secondary);
-
-  --button-bg: var(--primary);
-  --button-bg-hover: #587eb8;
 }
 
 *,
