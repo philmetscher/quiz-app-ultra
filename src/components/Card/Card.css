@@ -85,3 +85,11 @@
 .card__bookmark.card__bookmark--active i {
   color: var(--primary);
 }
+
+/* hovering */
+.card__bookmark:hover {
+  background: none;
+}
+.card__bookmark:hover i {
+  color: var(--primary-hover);
+}
