@@ -21,7 +21,9 @@ function App() {
         {page === "bookmarks" && (
           <Cards cards={cards.filter((card) => card.bookmarked)} />
         )}
-        {page === "form" && <Form cards={cards} setCards={setCards} />}
+        {page === "form" && (
+          <Form cards={cards} setCards={setCards} setPage={setPage} />
+        )}
         {page === "profile" && <Profile />}
       </main>
       <Navigation page={page} setPage={setPage} />

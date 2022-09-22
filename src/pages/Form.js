@@ -2,7 +2,7 @@ import { eventWrapper } from "@testing-library/user-event/dist/utils";
 import Card from "../components/card/Card";
 import "./Form.css";
 
-function Form({ cards, setCards }) {
+function Form({ cards, setCards, setPage }) {
   function appendCard({ question, answer, tags }) {
     const newCard = {
       id: Math.random().toFixed(36),
@@ -23,6 +23,7 @@ function Form({ cards, setCards }) {
 
     const appendingCard = appendCard(data);
     setCards([...cards, appendingCard]);
+    setPage("home");
   }
 
   return (
