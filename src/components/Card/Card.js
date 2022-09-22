@@ -46,6 +46,9 @@ function Card({ question, answer, tags, bookmarked }) {
       >
         <i className="fa-solid fa-bookmark"></i>
       </button>
+      <button className="card__delete" aria-label="delete">
+        <i class="fa-solid fa-x"></i>
+      </button>
     </section>
   );
 }
