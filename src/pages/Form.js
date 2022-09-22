@@ -27,11 +27,7 @@ function Form({ cards, setCards, setPage }) {
   }
 
   return (
-    <form
-      className="new-question"
-      data-js="questionForm"
-      onSubmit={submitCardForm}
-    >
+    <form className="new-question" onSubmit={submitCardForm}>
       <div className="form-group">
         <textarea
           name="question"

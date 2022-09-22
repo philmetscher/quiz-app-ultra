@@ -14,14 +14,11 @@ function Card({ question, answer, tags, bookmarked }) {
     }
   }
   return (
-    <section className={"card"} data-js="card">
+    <section className={"card"}>
       <div className="card__question-wrapper">
-        <p className="card__question" data-js="question">
-          {question}
-        </p>
+        <p className="card__question">{question}</p>
         <button
           className={"card__btn" + (showAnswer ? " btn--hide-answer" : "")}
-          data-js="toggleAnswer"
           onClick={() => {
             setShowAnswer(!showAnswer);
           }}
@@ -37,7 +34,7 @@ function Card({ question, answer, tags, bookmarked }) {
         </ul>
       </div>
       {showAnswer && (
-        <div className="card__answer-wrapper" data-js="answer">
+        <div className="card__answer-wrapper">
           <p>{answer}</p>
         </div>
       )}
@@ -46,7 +43,6 @@ function Card({ question, answer, tags, bookmarked }) {
           "card__bookmark" + (bookmarked ? " card__bookmark--active" : "")
         }
         aria-label="bookmark"
-        data-js="bookmarkBtn"
       >
         <i className="fa-solid fa-bookmark"></i>
       </button>
