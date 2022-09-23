@@ -8,6 +8,15 @@ function Cards({ cards, setCards }) {
     });
     setCards(newCards);
   }
+
+  function toggleBookmark(id) {
+    const newCards = cards.filter((card) => {
+      if (card.id === id) card.bookmarked = !card.bookmarked;
+      return card;
+    });
+    console.log(newCards);
+    setCards(newCards);
+  }
   return (
     <section className="quiz">
       {cards.map(({ id, question, answer, tags, bookmarked }) => (
@@ -19,6 +28,9 @@ function Cards({ cards, setCards }) {
           bookmarked={bookmarked}
           onDeleteClick={() => {
             deleteCard(id);
+          }}
+          onBookmarkClick={() => {
+            toggleBookmark(id);
           }}
         />
       ))}

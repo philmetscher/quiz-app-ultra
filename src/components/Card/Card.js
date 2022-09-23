@@ -1,7 +1,14 @@
 import { useState } from "react";
 import "./Card.css";
 
-function Card({ question, answer, tags, bookmarked, onDeleteClick }) {
+function Card({
+  question,
+  answer,
+  tags,
+  bookmarked,
+  onDeleteClick,
+  onBookmarkClick,
+}) {
   const [showAnswer, setShowAnswer] = useState(false);
 
   //check for some tags
@@ -43,6 +50,7 @@ function Card({ question, answer, tags, bookmarked, onDeleteClick }) {
           "card__bookmark" + (bookmarked ? " card__bookmark--active" : "")
         }
         aria-label="bookmark"
+        onClick={onBookmarkClick}
       >
         <i className="fa-solid fa-bookmark"></i>
       </button>
