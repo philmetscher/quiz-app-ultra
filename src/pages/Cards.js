@@ -1,7 +1,7 @@
 import Card from "../components/card/Card";
 import "./Cards.css";
 
-function Cards({ cards, setCards, setSavedCards }) {
+function Cards({ useCards, cards, setCards, setSavedCards }) {
   function deleteCard(id) {
     const newCards = cards.filter((card) => {
       return id !== card.id && card;
@@ -18,7 +18,7 @@ function Cards({ cards, setCards, setSavedCards }) {
   }
   return (
     <section className="quiz">
-      {cards.map(({ id, question, answer, tags, bookmarked }) => (
+      {useCards.map(({ id, question, answer, tags, bookmarked }) => (
         <Card
           key={id}
           question={question}

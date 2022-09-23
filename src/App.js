@@ -32,6 +32,7 @@ function App() {
       <main>
         {page === "home" && (
           <Cards
+            useCards={cards}
             cards={cards}
             setCards={setCards}
             setSavedCards={setSavedCards(cards)}
@@ -39,7 +40,8 @@ function App() {
         )}
         {page === "bookmarks" && (
           <Cards
-            cards={cards.filter((card) => card.bookmarked)}
+            useCards={cards.filter((card) => card.bookmarked)}
+            cards={cards}
             setCards={setCards}
             setSavedCards={setSavedCards(cards)}
           />
