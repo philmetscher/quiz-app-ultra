@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 import { initialCards } from "./db";
@@ -11,21 +11,41 @@ import Profile from "./pages/Profile";
 
 function App() {
   const [page, setPage] = useState("home");
-  const [cards, setCards] = useState(initialCards);
+  const [cards, setCards] = useState(() => {
+    return JSON.parse(localStorage.getItem("cards")) ?? initialCards;
+  });
+
+  function setSavedCards(currentCards) {
+    localStorage.removeItem("cards"); //remove current saved cards;
+    localStorage.setItem("cards", JSON.stringify(currentCards));
+    localStorage.setItem("loadedCards", true);
+  }
 
   return (
     <div className="App">
       <Header />
       <main>
-        {page === "home" && <Cards cards={cards} setCards={setCards} />}
+        {page === "home" && (
+          <Cards
+            cards={cards}
+            setCards={setCards}
+            setSavedCards={setSavedCards(cards)}
+          />
+        )}
         {page === "bookmarks" && (
           <Cards
             cards={cards.filter((card) => card.bookmarked)}
             setCards={setCards}
+            setSavedCards={setSavedCards(cards)}
           />
         )}
         {page === "form" && (
-          <Form cards={cards} setCards={setCards} setPage={setPage} />
+          <Form
+            cards={cards}
+            setCards={setCards}
+            setPage={setPage}
+            setSavedCards={setSavedCards(cards)}
+          />
         )}
         {page === "profile" && <Profile />}
       </main>

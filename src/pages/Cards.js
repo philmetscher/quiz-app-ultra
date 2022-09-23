@@ -1,7 +1,7 @@
 import Card from "../components/card/Card";
 import "./Cards.css";
 
-function Cards({ cards, setCards }) {
+function Cards({ cards, setCards, setSavedCards }) {
   function deleteCard(id) {
     const newCards = cards.filter((card) => {
       return id !== card.id && card;
