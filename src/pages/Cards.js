@@ -14,7 +14,6 @@ function Cards({ cards, setCards }) {
       if (card.id === id) card.bookmarked = !card.bookmarked;
       return card;
     });
-    console.log(newCards);
     setCards(newCards);
   }
   return (
