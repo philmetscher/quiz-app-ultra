@@ -11,9 +11,9 @@ import Profile from "./pages/Profile";
 
 function App() {
   const [page, setPage] = useState("home");
-  const [cards, setCards] = useState(() => {
-    return JSON.parse(localStorage.getItem("cards")) ?? initialCards;
-  });
+  const [cards, setCards] = useState(
+    () => JSON.parse(localStorage.getItem("cards")) ?? initialCards
+  );
 
   function setSavedCards(currentCards) {
     localStorage.removeItem("cards"); //remove current saved cards;
