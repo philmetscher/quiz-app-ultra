@@ -23,7 +23,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header
+        useDefaultCards={() => {
+          localStorage.removeItem("cards");
+          setCards(initialCards);
+        }}
+      />
       <main>
         {page === "home" && (
           <Cards
