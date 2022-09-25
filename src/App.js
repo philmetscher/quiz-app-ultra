@@ -15,11 +15,10 @@ function App() {
     () => JSON.parse(localStorage.getItem("cards")) ?? initialCards
   );
 
-  function setSavedCards(currentCards) {
+  useEffect(() => {
     localStorage.removeItem("cards"); //remove current saved cards;
-    localStorage.setItem("cards", JSON.stringify(currentCards));
-    localStorage.setItem("loadedCards", true);
-  }
+    localStorage.setItem("cards", JSON.stringify(cards));
+  }, [cards]);
 
   return (
     <div className="App">
@@ -31,28 +30,17 @@ function App() {
       />
       <main>
         {page === "home" && (
-          <Cards
-            useCards={cards}
-            cards={cards}
-            setCards={setCards}
-            setSavedCards={setSavedCards(cards)}
-          />
+          <Cards useCards={cards} cards={cards} setCards={setCards} />
         )}
         {page === "bookmarks" && (
           <Cards
             useCards={cards.filter((card) => card.bookmarked)}
             cards={cards}
             setCards={setCards}
-            setSavedCards={setSavedCards(cards)}
           />
         )}
         {page === "form" && (
-          <Form
-            cards={cards}
-            setCards={setCards}
-            setPage={setPage}
-            setSavedCards={setSavedCards(cards)}
-          />
+          <Form cards={cards} setCards={setCards} setPage={setPage} />
         )}
         {page === "profile" && <Profile />}
       </main>
