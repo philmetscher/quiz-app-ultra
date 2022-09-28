@@ -1,5 +1,5 @@
 import { eventWrapper } from "@testing-library/user-event/dist/utils";
-import Card from "../components/card/Card";
+import Card from "../components/Card";
 import "./Form.css";
 
 import { useNavigate } from "react-router-dom";

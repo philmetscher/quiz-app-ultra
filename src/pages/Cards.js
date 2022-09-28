@@ -1,5 +1,5 @@
-import Card from "../components/card/Card";
-import "./Cards.css";
+import styled from "styled-components";
+import Card from "../components/Card";
 
 function Cards({ useCards, cards, setCards }) {
   function deleteCard(id) {
@@ -17,7 +17,7 @@ function Cards({ useCards, cards, setCards }) {
     setCards(newCards);
   }
   return (
-    <section className="quiz">
+    <ActualQuiz>
       {useCards.map(({ id, question, answer, tags, bookmarked }) => (
         <Card
           key={id}
@@ -33,8 +33,16 @@ function Cards({ useCards, cards, setCards }) {
           }}
         />
       ))}
-    </section>
+    </ActualQuiz>
   );
 }
+
+const ActualQuiz = styled.section`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 30px;
+`;
 
 export default Cards;

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styled from "styled-components";
-import "./Card.css";
 
 function Card({
   question,
@@ -56,7 +55,7 @@ function Card({
   );
 }
 
-const ActualCard = styled.section`
+const ActualCard = styled.article`
   box-shadow: 0 0 4px var(--secondary025);
   width: 260px;
   position: relative;
