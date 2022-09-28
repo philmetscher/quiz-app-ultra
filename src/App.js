@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import { initialCards } from "./db";
 
 import Header from "./components/header/Header";
-import Navigation from "./components/navigation/Navigation";
+import Navigation from "./components/Navigation";
 import Cards from "./pages/Cards";
 import Form from "./pages/Form";
 import Profile from "./pages/Profile";
@@ -29,20 +30,31 @@ function App() {
         }}
       />
       <main>
-        {page === "home" && (
-          <Cards useCards={cards} cards={cards} setCards={setCards} />
-        )}
-        {page === "bookmarks" && (
-          <Cards
-            useCards={cards.filter((card) => card.bookmarked)}
-            cards={cards}
-            setCards={setCards}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Cards useCards={cards} cards={cards} setCards={setCards} />
+            }
           />
-        )}
-        {page === "form" && (
-          <Form cards={cards} setCards={setCards} setPage={setPage} />
-        )}
-        {page === "profile" && <Profile />}
+          <Route
+            path="/bookmark"
+            element={
+              <Cards
+                useCards={cards.filter((card) => card.bookmarked)}
+                cards={cards}
+                setCards={setCards}
+              />
+            }
+          />
+          <Route
+            path="/new-question"
+            element={
+              <Form cards={cards} setCards={setCards} setPage={setPage} />
+            }
+          />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
       </main>
       <Navigation page={page} setPage={setPage} />
     </div>
