@@ -2,7 +2,11 @@ import { eventWrapper } from "@testing-library/user-event/dist/utils";
 import Card from "../components/card/Card";
 import "./Form.css";
 
-function Form({ cards, setCards, setPage }) {
+import { useNavigate } from "react-router-dom";
+
+export default function Form({ cards, setCards, setPage }) {
+  const navigate = useNavigate();
+
   function appendCard({ question, answer, tags }) {
     const newCard = {
       id: Math.random().toFixed(36),
@@ -23,7 +27,7 @@ function Form({ cards, setCards, setPage }) {
 
     const appendingCard = appendCard(data);
     setCards([...cards, appendingCard]);
-    setPage("home");
+    navigate("/");
   }
 
   return (
@@ -69,5 +73,3 @@ function Form({ cards, setCards, setPage }) {
     </form>
   );
 }
-
-export default Form;
