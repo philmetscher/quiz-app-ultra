@@ -5,7 +5,7 @@ function Header({ useDefaultCards }) {
   return (
     <HeaderMain>
       <Logo src={logo} alt="Quizzle" />
-      <ResetBtn>
+      <ResetBtn onClick={useDefaultCards}>
         <i className="fa-solid fa-arrows-rotate"></i>
         <span>Karten zurücksetzen</span>
       </ResetBtn>
