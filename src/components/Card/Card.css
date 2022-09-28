@@ -7,29 +7,7 @@
 /* ---------------------- */
 /* QUESTION WRAPPER START */
 /* ---------------------- */
-.card__question-wrapper {
-  background: var(--card-bg);
-  padding: 30px 20px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  height: auto;
-}
-/* Question */
-.card__question-wrapper .card__question {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  min-height: 81px;
-}
-/* Question BTN */
-.card__btn {
-  margin-top: 20px;
-}
-.card__btn.btn--hide-answer {
-  background: var(--secondary);
-  color: var(--card-btn-hide-answer-color);
-}
+
 /* Question Tags */
 .card__tags {
   display: flex;
@@ -65,55 +43,4 @@
 /* ANSWER WRAPPER END     */
 /* ---------------------- */
 
-/* Card Bookmark */
-.card__bookmark {
-  position: absolute;
-  right: 10px;
-  top: 0;
-  border: none;
-  background: none;
-  font-size: 24px;
-  box-shadow: none;
-}
-.card__bookmark i {
-  position: relative;
-  top: -4px;
-  color: var(--secondary);
-}
-.card__bookmark.card__bookmark--active i {
-  color: var(--primary);
-}
-
-/* hovering */
-.card__bookmark:hover {
-  background: none;
-}
-.card__bookmark:hover i {
-  color: var(--primary-hover);
-}
-
 /* Delete Card BTN */
-.card__delete {
-  position: absolute;
-  left: -10px;
-  top: -10px;
-  border: none;
-  background: none;
-  box-shadow: none;
-  font-size: 20px;
-}
-.card__delete i {
-  background: var(--secondary);
-  color: var(--primary);
-  border-radius: 100%;
-  padding: 5px;
-  width: 30px;
-  height: 30px;
-  line-height: 20px;
-}
-
-/* hovering */
-.card__delete:hover i {
-  background: var(--primary-hover);
-  color: #fff;
-}
