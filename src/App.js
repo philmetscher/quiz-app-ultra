@@ -4,7 +4,7 @@ import "./App.css";
 
 import { initialCards } from "./db";
 
-import Header from "./components/header/Header";
+import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import Cards from "./pages/Cards";
 import Form from "./pages/Form";
